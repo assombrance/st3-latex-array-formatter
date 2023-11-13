@@ -1,4 +1,4 @@
-import difflib
+# import difflib
 import numpy as np
 
 with open("input.txt", "r") as f:
@@ -28,10 +28,10 @@ for (i, j), _ in np.ndenumerate(cells):
 output = " \\\\\n".join([" & ".join(cells[i, :]) for i in range(len(cells))]) + " \\\\"
 
 
-with open("expected_output.txt", "r") as f:
-    data = f.read()
+# with open("expected_output.txt", "r") as f:
+#     data = f.read()
 
-print("\n".join([d for d in difflib.ndiff(output, data) if d[0] != " "]))
+# print("\n".join([d for d in difflib.ndiff(output, data) if d[0] != " "]))
 
 with open("output.txt", "w") as f:
     f.write(output)
